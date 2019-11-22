@@ -1,4 +1,4 @@
-import { SET_QUOTES_LOADING, SET_QUOTES, SET_QUOTES_DONE } from '../actions/quoteActions';
+import { SET_QUOTES_LOADING, SET_QUOTE, SET_QUOTES_DONE } from '../actions/quoteActions';
 
 const initialState = {
   quote: {},
@@ -8,7 +8,7 @@ const initialState = {
 
 export default function reducer(state = initialState, action) {
   switch(action.type) {
-    case SET_QUOTES:
+    case SET_QUOTE:
       return { ...state, quote: action.payload };
     case SET_QUOTES_LOADING: 
       return { ...state, loading: true };

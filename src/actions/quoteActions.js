@@ -9,7 +9,7 @@ export const setQuote = () => dispatch => {
   return getOneQuote()
     .then(quote => {
       dispatch({
-        type: SET_QUOTES,
+        type: SET_QUOTE,
         payload: quote
       });
       dispatch({
@@ -19,7 +19,7 @@ export const setQuote = () => dispatch => {
 };
 
 export const [
-  SET_QUOTES,
+  SET_QUOTE,
   SET_QUOTES_DONE,
   SET_QUOTES_LOADING
 ] = creatAction('SET_QUOTE', setQuote);

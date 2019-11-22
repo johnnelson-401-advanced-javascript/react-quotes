@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import '../reset.css';
 import Header from './Header/Header';
+import QuoteContainer from '../containers/QuoteContainer';
 
 
 export default function App() {
@@ -13,10 +14,9 @@ export default function App() {
     <Router>
       <Header />
       <Switch>
-        <Route path="/" component={} />
+        <Route path="/" component={QuoteContainer} />
       </Switch>
     </Router>
 
-  )
-
+  );
 }
