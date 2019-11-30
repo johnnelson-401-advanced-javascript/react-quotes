@@ -8,19 +8,18 @@ export default function OneQuote() {
   const quote = useSelector(state => getQuote(state));
   const dispatch = useDispatch();
   const loading = useSelector(state => getQuotesLoading(state));
+  const handleClick = () => dispatch(setQuote());
 
   useEffect(() => {
-    if(!quote) {
-      dispatch(setQuote());
-    }
+    console.log('UseEffect');
+    
+    dispatch(setQuote());
   }, []);
   
   if(loading) return <h1>Loading . . . </h1>;
 
-  function handleClick() {
-    dispatch(setQuote());
-  }
-
+  
+  
   return (
     <>
       <Quote quote={quote} handleClick={handleClick} />

@@ -12,7 +12,7 @@ const Quote = ({ quote, handleClick }) => (
 );
 
 Quote.propTypes = {
-  quote: PropTypes.shapeOf({
+  quote: PropTypes.shape({
     image: PropTypes.string.isRequired,
     character: PropTypes.string.isRequired,
     quote: PropTypes.string.isRequired,
