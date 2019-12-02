@@ -1,12 +1,11 @@
 import React from 'react';
-import { mount } from 'enzyme';
-import QuoteContainer from '../containers/QuoteContainer';
+import { shallow } from 'enzyme';
+import Quotes from '../components/Quotes/Quotes';
 
-describe('Quote Container', () => {
-  it('Renders a Quote Container', () => {
-    const quote = { image: 'string.com', character: 'Name', quote: 'Test' };
-    const handleClick = jest.fn();
-    const wrapper = mount(<QuoteContainer quote={quote} handleClick={handleClick}/>);
+describe('Quotes', () => {
+  it('Renders a list of Quotes', () => {
+    const quotes = [{ image: 'string.com', character: 'Name', quote: 'Test' }];
+    const wrapper = shallow(<Quotes quotes={quotes} />);
     expect(wrapper).toMatchSnapshot();
   });
   

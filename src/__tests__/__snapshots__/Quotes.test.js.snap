@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Quotes Renders a list of Quotes 1`] = `
+<Fragment>
+  <ul>
+    <li
+      key="Test"
+    >
+      <Quote
+        character="Name"
+        image="string.com"
+        quote="Test"
+      />
+    </li>
+  </ul>
+</Fragment>
+`;
