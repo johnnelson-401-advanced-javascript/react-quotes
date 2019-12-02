@@ -1,3 +1,2 @@
-export const getQuote = state => { return state.quote; };
-export const getQuotes = state => { return state.quotes; };
-export const getQuotesLoading = state => state.loading;
+export const getQuotes = state => state.quotes.quotes;
+export const getQuotesLoading = state => state.quotes.loading;

@@ -1,17 +1,17 @@
 import { createAction } from 'promise-middleware-redux';
 import { getOneQuote } from '../services/simpsonsAPI';
 
-export const setQuote = () => dispatch => {
+export const setQuotes = () => dispatch => {
   
   dispatch({
     type: SET_QUOTES_LOADING
   });
 
   return getOneQuote()
-    .then(quote => {
+    .then(quotes => {
       dispatch({
-        type: SET_QUOTE,
-        payload: quote
+        type: SET_QUOTES,
+        payload: quotes
       });
       dispatch({
         type: SET_QUOTES_DONE
@@ -20,7 +20,7 @@ export const setQuote = () => dispatch => {
 };
 
 export const [
-  SET_QUOTE,
+  SET_QUOTES,
   SET_QUOTES_DONE,
   SET_QUOTES_LOADING
-] = createAction('SET_QUOTE', setQuote);
+] = createAction('SET_QUOTES', setQuotes);

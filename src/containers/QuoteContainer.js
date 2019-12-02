@@ -1,28 +1,27 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getQuote, getQuotesLoading } from '../selectors/quote-selectors';
-import { setQuote } from '../actions/quoteActions';
-import Quote from '../components/Quotes/Quote';
+import { getQuotes, getQuotesLoading } from '../selectors/quote-selectors';
+import { setQuotes } from '../actions/quoteActions';
+import Quotes from '../components/Quotes/Quotes';
 
-export default function OneQuote() {
-  const quote = useSelector(state => getQuote(state));
+export default function QuoteContainer() {
+  const quotes = useSelector(state => getQuotes(state));
   const dispatch = useDispatch();
   const loading = useSelector(state => getQuotesLoading(state));
-  const handleClick = () => dispatch(setQuote());
+  const handleClick = () => dispatch(setQuotes());
 
   useEffect(() => {
-    console.log('UseEffect');
-    
-    dispatch(setQuote());
+    if(quotes.length <= 0) {
+      dispatch(setQuotes());
+    }
   }, []);
-  
+
   if(loading) return <h1>Loading . . . </h1>;
 
-  
-  
   return (
     <>
-      <Quote quote={quote} handleClick={handleClick} />
+      <button onClick={handleClick}>Get New Quote</button>
+      <Quotes quotes={quotes} />
     </>
   );
 }
