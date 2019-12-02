@@ -3,17 +3,18 @@ import Quote from './Quote';
 import PropTypes from 'prop-types';
 
 export default function Quotes({ quotes }) {
-  const RenderedQuote = quotes.map(quote => (
+  const QuoteList = quotes.map(quote => (
     <>
-      <li key={quote.quote}>
+      <li key={quote.character}>
         <Quote quote={quote.quote} image={quote.image} character={quote.character} />
       </li>
     </>
   ));
+  
   return (
     <>
       <ul>
-        {RenderedQuote}
+        {QuoteList}
       </ul>
     </>
   );
