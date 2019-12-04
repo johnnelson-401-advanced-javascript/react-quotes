@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders a Quote Component Tests the Quote component 1`] = `
+<figure
+  className="Quote"
+>
+  <img />
+  <figcaption />
+  <figcaption>
+    <Component />
+  </figcaption>
+</figure>
+`;
