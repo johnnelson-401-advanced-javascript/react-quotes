@@ -4,7 +4,7 @@ exports[`Quotes Renders a list of Quotes 1`] = `
 <Fragment>
   <ul>
     <li
-      key="Test"
+      key="Name"
     >
       <Quote
         character="Name"
